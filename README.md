@@ -13,10 +13,11 @@
 ## 高德web服务的 Key 说明
 1. 需在backend/.env添加高德 web服务的 api key
 如下：
-# 高德 API 配置
+```# 高德 API 配置
 # 后端使用 Web服务 Key（用于坐标查询、POI 查询、服务端路线计算）
 AMAP_API_KEY=高德key
 AMAP_SECURITY_CODE=
+```
 
 2.文件：backend/app.py
 位置：第 22 行
