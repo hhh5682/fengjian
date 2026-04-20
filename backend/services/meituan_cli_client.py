@@ -13,7 +13,7 @@ class MeituanCLIClient:
     def __init__(self, token: Optional[str] = None, timeout: int = 30):
         self.token = token or os.getenv(
             "MEITUAN_TOKEN",
-            "3c3b517cf5acc6def517961510b8229aec3694b39f123352eafb711285e43548",
+            "美团key",
         )
         self.timeout = timeout
         # 优先使用环境变量，否则尝试常见路径
