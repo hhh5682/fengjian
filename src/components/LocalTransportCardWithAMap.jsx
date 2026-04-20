@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 
 // 前端使用 Web端 Key（用于地图展示、前端交互式路线显示）
-const AMAP_WEB_KEY = '058fde223092ef30e2693a7d2bfd1edf'
-const AMAP_SECURITY_CODE = '319c9017cefd129ab12b8e4c0ee67cda'
+const AMAP_WEB_KEY = '你的key'
+const AMAP_SECURITY_CODE = '密钥'
 
 const TRANSPORT_MODES = [
   { key: 'driving', label: '驾车', icon: '/img/汽车.png' },
