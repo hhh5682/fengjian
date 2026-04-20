@@ -19,7 +19,7 @@ class MeituanCLIClient:
         # 优先使用环境变量，否则尝试常见路径
         self.cli_command = os.getenv(
             "MEITUAN_CLI_COMMAND",
-            r"C:\Users\黄静欣\AppData\Roaming\npm\mttravel.cmd"
+            r"C:\Users\.......\npm\mttravel.cmd"
         )
 
     def is_ready(self) -> bool:
