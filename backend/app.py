@@ -19,7 +19,7 @@ app.config['JSON_AS_ASCII'] = False
 drafts_db = []
 
 # 后端使用 Web服务 Key（用于坐标查询、POI 查询、服务端路线计算）
-amap_api_key = os.getenv("AMAP_API_KEY", "26d116615582e27a30197162f0eb9ec3")
+amap_api_key = os.getenv("AMAP_API_KEY", "你的key")
 amap_security_code = os.getenv("AMAP_SECURITY_CODE", "")
 
 amap_client = AMapClient(api_key=amap_api_key, security_code=amap_security_code)
