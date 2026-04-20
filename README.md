@@ -10,19 +10,40 @@
 - 地图：高德地图 JS API
 - 后端：Python Flask
 
-## 高德 Key 说明
+## 高德web服务的 Key 说明
+1. 需在backend/.env添加高德 web服务的 api key
+如下：
+# 高德 API 配置
+# 后端使用 Web服务 Key（用于坐标查询、POI 查询、服务端路线计算）
+AMAP_API_KEY=高德key
+AMAP_SECURITY_CODE=
 
-你提供的两串值含义不同：
+2.文件：backend/app.py
+位置：第 22 行
+内容：amap_api_key = os.getenv("AMAP_API_KEY", "你的高德web服务类型的key")
 
-- Web 端 `Key`：`058fde223092ef30e2693a7d2bfd1edf`
-- 安全密钥 `securityJsCode`：`319c9017cefd129ab12b8e4c0ee67cda`
+# 添加高德 web端的 api key
+1. src/pages/Map.jsx
+位置：第 6-7 行
 
-之前地图不能用的原因，就是把 `securityJsCode` 错当成了 Web Key，导致高德返回 `INVALID_USER_KEY`。
+const AMAP_WEB_KEY = '你的key'
+const AMAP_SECURITY_CODE = '你的密钥'
+用途：地点选择地图（用户选择出发地/目的地时使用）
 
-现在地图页 [`src/pages/Map.jsx`](src/pages/Map.jsx) 已改为：
-- 使用真实 Web Key 加载高德 JS SDK
-- 使用 `securityJsCode` 配置安全校验
-- 使用 [`AMap.AutoComplete`](src/pages/Map.jsx:22) 和 [`AMap.PlaceSearch`](src/pages/Map.jsx:26) 做地点搜索
+2. src/components/LocalTransportCardWithAMap.jsx
+位置：第 4-5 行
+
+const AMAP_WEB_KEY = '你的key'
+const AMAP_SECURITY_CODE = '你的密钥'
+用途：小交通路线地图（显示景点间的交通路线）
+
+这两个文件都在前端代码中硬编码了相同的 Web 端 Key 和安全密钥。
+
+
+## 豆包 key 说明
+需在文件：backend/services/doubao_client.py， 位置：第 14-16 行添加你的豆包key
+api_key: str = "豆包key",
+ndpoint_id: str = "Ep ID",
 
 ## 已实现功能
 
