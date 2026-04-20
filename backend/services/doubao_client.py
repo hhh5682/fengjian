@@ -13,8 +13,8 @@ from typing import Any, Dict, Optional
 class DoubaoClient:
     def __init__(
         self,
-        api_key: str = "ark-24cbc423-c86d-47c4-9f84-088a374ca8e8-e0f80",
-        endpoint_id: str = "ep-20260417195236-hkhdx",
+        api_key: str = "豆包key",
+        endpoint_id: str = "Ep ID",
         timeout: int = 300,
     ) -> None:
         self.api_key = api_key
